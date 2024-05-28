@@ -18,6 +18,6 @@ public class Main {
 
         }
 
-        int lecka = 1;
+        int heif= 8;
     }
 }
