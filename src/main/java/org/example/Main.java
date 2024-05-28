@@ -17,7 +17,9 @@ public class Main {
 
 
         }
+        int lecka = 2;
 
         int heif= 8;
+
     }
 }
