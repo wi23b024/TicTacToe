@@ -18,8 +18,9 @@ public class Main {
 
         }
         int lecka = 2;
+int bla=7;
 
         int heif= 8;
-
+int test= 2;
     }
 }
