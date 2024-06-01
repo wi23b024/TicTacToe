@@ -19,7 +19,7 @@ public class Main {
         }
         int lecka = 2;
 int bla=7;
-
+int receba=1;
         int heif= 8;
 int test= 2;
 
