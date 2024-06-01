@@ -22,5 +22,7 @@ int bla=7;
 
         int heif= 8;
 int test= 2;
+
+int test2=2;
     }
 }
