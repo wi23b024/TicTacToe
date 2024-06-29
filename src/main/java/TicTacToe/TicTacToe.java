@@ -27,6 +27,7 @@ public class TicTacToe {
     public void play() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
+            board.print();
             System.out.println("Current Player: " + currentPlayer.getMarker());
             System.out.print("row (0-2): ");
             int x = scanner.nextInt();
