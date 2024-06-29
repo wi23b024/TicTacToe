@@ -23,6 +23,22 @@ public class TicTacToe {
     public void switchCurrentPlayer() {
         currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
+    public boolean hasWinner() {
+        char[][] b = board.cells;
+        // Check rows and columns
+        for (int i = 0; i < 3; i++) {
+            if (b[i][0] == b[i][1] && b[i][1] == b[i][2] && b[i][0] != ' ') return true;
+            if (b[0][i] == b[1][i] && b[1][i] == b[2][i] && b[0][i] != ' ') return true;
+        }
+        // Check diagonals
+        if (b[0][0] == b[1][1] && b[1][1] == b[2][2] && b[0][0] != ' ') return true;
+        if (b[0][2] == b[1][1] && b[1][1] == b[2][0] && b[0][2] != ' ') return true;
+        return false;
+    }
+
+    public boolean isDraw() {
+        return board.isFull() && !hasWinner();
+    }
 
     public void play() {
         Scanner scanner = new Scanner(System.in);
@@ -36,6 +52,15 @@ public class TicTacToe {
 
             if (board.isCellEmpty(x, y)) {
                 board.place(x, y, currentPlayer.getMarker());
+                if (hasWinner()) {
+                    board.print();
+                    System.out.println("Player " + currentPlayer.getMarker() + " wins!");
+                    break;
+                } else if (isDraw()) {
+                    board.print();
+                    System.out.println("The game is a draw!");
+                    break;
+                }
                 switchCurrentPlayer();
             } else {
                 System.out.println("Cell is not empty! Choose another.");
