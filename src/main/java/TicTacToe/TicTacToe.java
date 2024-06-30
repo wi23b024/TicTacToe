@@ -23,6 +23,7 @@ public class TicTacToe {
     public void switchCurrentPlayer() {
         currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
+
     public boolean hasWinner() {
         char[][] b = board.cells;
         // Check rows and columns
@@ -70,8 +71,19 @@ public class TicTacToe {
 
     public static void main(String[] args) {
         TicTacToe game = new TicTacToe();
-        game.start();
-        game.play();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            game.start();
+            game.play();
+
+            System.out.print("Do you want to play again? (y/n): ");
+            if (scanner.next().toLowerCase().charAt(0) != 'y') {
+                break;
+            }
+        }
+        scanner.close();
     }
 }
+
 
