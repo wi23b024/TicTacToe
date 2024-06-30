@@ -15,17 +15,17 @@ class TicTacToeTest {
     @Test
     void testStart() {
         game.start();
-        assertEquals('X', game.currentPlayer.getMarker(), "The current player should be player1 with marker 'X'");
-        assertTrue(isBoardClear(game.board), "The board should be cleared at the start of the game");
+        assertEquals('X', game.currentPlayer.getMarker());
+        assertTrue(isBoardClear(game.board));
     }
 
     @Test
     void testSwitchCurrentPlayer() {
         game.start();
         game.switchCurrentPlayer();
-        assertEquals('O', game.currentPlayer.getMarker(), "The current player should switch to player2 with marker 'O'");
+        assertEquals('O', game.currentPlayer.getMarker());
         game.switchCurrentPlayer();
-        assertEquals('X', game.currentPlayer.getMarker(), "The current player should switch back to player1 with marker 'X'");
+        assertEquals('X', game.currentPlayer.getMarker());
     }
 
     @Test
@@ -34,19 +34,19 @@ class TicTacToeTest {
         game.board.place(0, 0, 'X');
         game.board.place(0, 1, 'X');
         game.board.place(0, 2, 'X');
-        assertTrue(game.hasWinner(), "Player X should win with a horizontal line");
+        assertTrue(game.hasWinner());
 
         game.start();
         game.board.place(0, 0, 'O');
         game.board.place(1, 1, 'O');
         game.board.place(2, 2, 'O');
-        assertTrue(game.hasWinner(), "Player O should win with a diagonal line");
+        assertTrue(game.hasWinner());
 
         game.start();
         game.board.place(0, 0, 'X');
         game.board.place(1, 0, 'X');
         game.board.place(2, 0, 'X');
-        assertTrue(game.hasWinner(), "Player X should win with a vertical line");
+        assertTrue(game.hasWinner());
     }
 
     @Test
@@ -61,7 +61,7 @@ class TicTacToeTest {
         game.board.place(2, 0, 'O');
         game.board.place(2, 1, 'X');
         game.board.place(2, 2, 'O');
-        assertTrue(game.isDraw(), "The game should be a draw");
+        assertTrue(game.isDraw());
 
         game.start();
         game.board.place(0, 0, 'X');
@@ -72,10 +72,9 @@ class TicTacToeTest {
         game.board.place(1, 2, 'X');
         game.board.place(2, 0, 'O');
         game.board.place(2, 1, 'X');
-        assertFalse(game.isDraw(), "The game should not be a draw since not all cells are filled");
+        assertFalse(game.isDraw());
     }
 
-    // Helper method to check if the board is cleared
     private boolean isBoardClear(Board board) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -86,4 +85,5 @@ class TicTacToeTest {
         }
         return true;
     }
+
 }
