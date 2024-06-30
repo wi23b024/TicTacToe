@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BoardTest {
-    private Board board;
+    public Board board;
 
     @BeforeEach
     public void setUp() {

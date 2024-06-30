@@ -3,10 +3,10 @@ package TicTacToe;
 import java.util.Scanner;
 
 public class TicTacToe {
-    private Player player1;
-    private Player player2;
-    private Player currentPlayer;
-    private Board board;
+    public Player player1;
+    public Player player2;
+    public Player currentPlayer;
+    public Board board;
 
     public TicTacToe() {
         player1 = new Player('X');
